@@ -18,6 +18,7 @@ const member_upgrade_get = asyncHandler(async (req, res, next) => {
   res.render("member_upgrade", {
     title: "Upgrade Membership",
     user: req.user && true,
+    role: req.user.role
   });
 });
 
