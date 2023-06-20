@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./partials/head'); %>
+  </head>
+  <body class="container">
+    <header>
+      <%- include('./partials/header'); -%>
+    </header>
+    <main>
+      <h1><%= title %></h1>
+      <% if (typeof(comments) !== 'undefined') { %>
+        <div class="cardStack">
+          <% comments.forEach(comment => { %>
+            <div class="card">
+              <% if(role === 'admin') { %>
+                <button class="delete"><a href=<%=`./comment/delete/${comment._id}` %>>DEL</a></button>
+              <% } %>
+              <div class="italic bold small">Posted <%= comment.timeAgo %> ago by <%= (typeof comment.originalPoster !== 'undefined') ? `${comment.originalPoster === null ? '[Deleted]' : comment.originalPoster.userName}` :
+              'Anonymous' %>:</div>
+              <% if( typeof comment.title !== 'undefined') { %>
+                <h2><%=`${comment.title}`%></h2>
+              <% } %>
+              <p><%= comment.content %></p>
+            </div>
+          <% }) %>
+          </div>
+      <% } %>
+      <button class='invert sticky-bottom' type="click"><a href="./comment/new">Add New Comment</a></button>
+    </main>
+    <footer>
+      <%- include('./partials/footer'); -%>
+    </footer>
+  </body>
+</html>

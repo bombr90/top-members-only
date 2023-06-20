@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./partials/head'); %>
+  </head>
+  <body class="container">
+    <header>
+      <%- include('./partials/header'); -%>
+    </header>
+    <main>
+      <h1><%= title %></h1>
+      <form method="POST" action="">
+        <span>
+          <label for="username">Username (Email)</label>
+          <input 
+            type="email" 
+            name="username" 
+            id="username" 
+            required='true'
+            value=<%= (typeof(username) === 'undefined') ? '' : username %>
+          >
+        </span>
+        <span>
+          <label for="password">Password</label>
+          <input 
+            type="password" 
+            name="password" 
+            id="password" 
+            required='true'
+          >
+        </span>
+        <button type="submit">Submit</button>
+      </form>
+      <% if (typeof(errors) !== 'undefined') { %>
+        Error List:
+        <ul>
+          <% errors.forEach(error => { %>
+            <li><%= error.msg %></li>
+          <% }) %>
+        </ul>
+      <% } %>
+    </main>
+    <footer>
+      <%- include('./partials/footer'); -%>
+    </footer>
+  </body>
+</html>

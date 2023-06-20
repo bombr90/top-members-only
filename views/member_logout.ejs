@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./partials/head'); %>
+  </head>
+  <body class="container">
+    <header>
+      <%- include('./partials/header'); -%>
+    </header>
+    <main>
+      <h1><%= title %></h1>
+      <form method="GET" action="./login">
+        <p>You're logged out of <strong><em>The Clubhouse</em></strong>. Click below if you want to log back in:</p>
+        <button type="submit">Click to go to Login page</button>
+      </form>
+    </main>
+    <footer>
+      <%- include('./partials/footer'); -%>
+    </footer>
+  </body>
+</html>

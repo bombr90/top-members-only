@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./partials/head'); %>
+  </head>
+  <body class="container">
+    <header>
+      <%- include('./partials/header'); -%>
+    </header>
+    <main>
+      <h1><%= title %></h1>
+      <div>
+        <p>You are about to delete comment:</p><p><strong><%= typeof id === 'undefined' ? 'id' : id %></strong></p>
+      </div>
+      <form method="POST" action="">
+        <span>
+          <button type="submit">Delete</button>
+          <button type="button"><a href="./../../comments">Back</a></button>
+        </span>
+      </form>
+      <% if (typeof(errors) !== 'undefined') { %>
+        Error List:
+        <ul>
+          <% errors.forEach(error => { %>
+            <li><%= error.msg %></li>
+          <% }) %>
+        </ul>
+      <% } %>
+    </main>
+    <footer>
+      <%- include('./partials/footer'); -%>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./partials/head'); %>
+  </head>
+  <body class="container">
+    <header>
+      <%- include('./partials/header'); -%>
+    </header>
+    <main>
+      <h1><%= title %></h1>
+      <p>Welcome to <strong><em>The Clubhouse</em></strong> private message board - a very basic Express website.</p>
+      <p>Please navigate using the navbar above to </p>
+      <h2>Dynamic Content</h2>
+      <%if(typeof member !== 'undefined'){%>
+        <div class="cardStack">
+          Your Details:
+          <div class="card">
+            <ul>
+            <%for (const [key,value] of Object.entries(member)) {%>
+              <li><%=`${key}: ${value}`%></li>
+            <%}%>
+            </ul>
+          </div>
+        </div>
+      <% } %>
+      <p>The Clubhouse has the following record counts:</p>
+      <ul>
+        <li><em>Members:</em> <%= member_count %></li>
+        <li><em>Comments:</em> <%= comment_count %></li>
+      </ul>
+    </main>
+    <footer>
+      <%- include('./partials/footer'); -%>
+    </footer>
+  </body>
+</html>

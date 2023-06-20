@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./partials/head'); %>
+  </head>
+  <body class="container">
+    <header>
+      <%- include('./partials/header'); -%>
+    </header>
+    <main>
+      <h1><%= title %></h1>
+      <div>
+        <p>Type in the secret code to upgrade your membership.</p><p>Your current membership role is: <strong><%= typeof role === 'undefined' ? 'Guest' : role %></strong></p>
+      </div>
+      <form method="POST" action="">
+        <span>
+          <label for="username">Username (Email)</label>
+          <select 
+            id="role"
+            name="role"
+            required="true"
+          >
+            <option value="member" selected="selected">Full Member (read/write)</option>
+            <option value="admin">Administrator (read/write/delete)</option>
+          </select>
+        </span>
+        <span>
+          <label for="password">Password</label>
+          <input 
+            type="password" 
+            name="password" 
+            id="password" 
+            required="true"
+          >
+        </span>
+        <button type="submit">Submit</button>
+      </form>
+      <% if (typeof(errors) !== 'undefined') { %>
+        Error List:
+        <ul>
+          <% errors.forEach(error => { %>
+            <li><%= error.msg %></li>
+          <% }) %>
+        </ul>
+      <% } %>
+    </main>
+    <footer>
+      <%- include('./partials/footer'); -%>
+    </footer>
+  </body>
+</html>

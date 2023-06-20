@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./partials/head'); %>
+  </head>
+  <body class="container">
+    <header>
+      <%- include('./partials/header'); -%>
+    </header>
+    <main>
+      <h1><%= title %></h1>
+      <p>Join the conversation</p>
+      <form method="POST" action="">  
+        <label for="commentTitle">Title (Optional)</label>
+        <span>
+          <input 
+            type="text" 
+            placeholder="Enter your title here..." 
+            name="commentTitle" 
+            id="commentTitle" 
+            <%if(typeof commentTitle !== 'undefined'){%>
+              value='<%=commentTitle%>'<%}%>
+            max='64'
+          >
+        </span>
+        <label for="commentContent">Comment</label>
+        <span>
+          <textarea
+            placeholder="Enter your comment here..."
+            name="commentContent" 
+            id="commentContent" 
+            required="true"
+            minlength="1"
+            maxlength="512"
+            rows="6"
+            spellcheck="true"
+          ><% if(typeof commentContent !== 'undefined') { %><%=commentContent%><%}%></textarea>
+        </span>
+        <button type="submit">Submit</button>
+      </form>
+      <% if (typeof(errors) !== 'undefined') { %>
+        Error List:
+        <ul>
+          <% errors.forEach(error => { %>
+            <li><%= error.msg %></li>
+          <% }) %>
+        </ul>
+      <% } %>
+    </main>
+    <footer>
+      <%- include('./partials/footer'); -%>
+    </footer>
+  </body>
+</html>

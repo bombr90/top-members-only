@@ -1,0 +1,245 @@
+nav {
+  grid-area: nav;
+  display:flex;
+  justify-content: center;
+  font-weight: 700;
+  background-color: lightgray;
+  border-bottom: 1px solid gray;
+}
+
+nav ul {
+  display:flex;
+  flex:1;
+  flex-wrap: wrap;
+  padding:0;
+  margin:0;
+}
+
+nav li {
+  flex:1;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  list-style: none;
+  margin:0;
+}
+nav li:hover,
+nav li:active,
+nav li:focus {
+  font-weight: 700;
+  transition: 0.3s;
+  background-color: gray;
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+:root {
+  font-family: 'Courier New', Courier, monospace;
+  background: whitesmoke;
+  color: gray;
+}
+
+body{
+  height: calc(100vh - 1rem);
+  min-width: 480px;
+}
+
+p {
+  margin: 0.5rem 0;
+  white-space:pre-line;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: fit-content(1rem) 1fr 3rem;
+  grid-template-areas:
+    'nav'
+    'main'
+    'footer';
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+button, 
+input, 
+select, 
+textarea {
+  font-weight: 700;
+  border-color: gray;
+  border-radius: 6px;
+  padding: 0.5rem 1.25rem;
+  border: none;
+}
+input, 
+select, 
+textarea {
+  color: gray;
+  background-color: white;
+  font-size: 1rem;
+  border: 1px solid darkgray;
+  flex:1;
+}
+
+button {
+  color: white;
+  background-color: lightgray;
+  align-self: center;
+}
+
+button:hover,
+button:active,
+button:focus {
+  color:whitesmoke;
+  background-color: gray;
+  border-color: darkgray;
+  box-shadow: none;
+  transition: 0.3s;
+}
+
+textarea {
+  resize: none;
+}
+
+legend {
+  font-weight: 700;
+  border-color: gray;
+  padding: 0rem .5rem;
+}
+fieldset {
+  display:flex;
+  padding: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+  border-radius: 6px;
+  border: 1px solid gray;
+  background-color: white;
+}
+
+hr {
+  width: 90%;
+  border-width: 2px;
+  border-radius: .25rem;
+}
+
+form {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 2px 2px 4px gray;
+  border-radius: 8px;
+  background-color: whitesmoke;
+  max-width: 600px;
+  padding: 1rem;
+}
+
+footer {
+  grid-area: footer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  background-color: lightgray;
+  border-top: 1px solid gray;
+}
+
+main {
+  grid-area: main;
+  /* overflow-y: auto; */
+  display:flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 1rem;
+  background-color: lightgray;  
+  scroll-behavior: auto;
+}
+
+form > span {
+  display:flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.invalid{
+  border: 1px solid red;
+  background-color: rgb(240, 170, 170);
+}
+
+.valid{
+  border: 1px solid green;
+  background-color: lightgreen;
+}
+
+.card {
+  display: flex;
+  position:relative;
+  flex-direction: column;
+  padding: 0.5rem;
+  box-shadow: 2px 2px 4px gray;
+  background-color: white;
+  border-radius: 6px;
+}
+
+.cardStack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: whitesmoke;
+  border-radius: 6px;
+  box-shadow: 2px 2px 4px lightgray;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.small {
+  font-size: smaller;
+}
+
+.invert {
+  color: gray;
+  background-color: white;
+  border: 1px solid gray;
+  box-shadow: 2px 2px 4px black; 
+}
+
+.sticky-bottom {
+  position:sticky;
+  align-self: flex-end;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  opacity: 90%;
+}
+
+h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+.delete {
+  font-weight: 700;
+  border-radius: 6px;
+  font-size: x-small;
+  padding: .5rem;
+  background: lightgray;
+  align-self: flex-end;
+  position: absolute;
+}

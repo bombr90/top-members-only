@@ -1,0 +1,27 @@
+<nav>
+  <ul>
+    <% if(typeof user !== 'undefined') { %>
+      <li>
+        <a href="/clubhouse">Home</a></li>
+      <li>
+        <a href="/clubhouse/comments">All Comments</a></li>
+      <li>
+        <a href="/clubhouse/member/details">My Details</a></li>
+      <li>
+        <a href="/clubhouse/member/logout">Logout</a></li>
+      <li>
+        <a href="/clubhouse/comment/new">Comment</a></li>
+      <li>
+        <a href="/clubhouse/member/upgrade">Upgrade</a></li>  
+    <% } else { %>
+      <li>
+        <a href="/clubhouse">Home</a></li>
+      <li>
+        <a href="/clubhouse/comments">All Comments</a></li>
+      <li>
+        <a href="/clubhouse/member/login">Login</a></li>
+      <li>
+        <a href="/clubhouse/member/create">Join</a></li>
+    <% } %>
+  </ul>
+</nav>
